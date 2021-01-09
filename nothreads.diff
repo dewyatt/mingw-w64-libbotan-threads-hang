@@ -1,0 +1,12 @@
+diff --git a/mingw-w64-libbotan/PKGBUILD b/mingw-w64-libbotan/PKGBUILD
+index d017f93db..ac35894a4 100644
+--- a/mingw-w64-libbotan/PKGBUILD
++++ b/mingw-w64-libbotan/PKGBUILD
+@@ -59,6 +59,7 @@ build() {
+   MSYS2_ARG_CONV_EXCL="--prefix=;--libdir=;--bindir=" \
+   ${MINGW_PREFIX}/bin/python configure.py \
+     --disable-shared \
++    --without-os-feature=threads \
+     --os=mingw \
+     --cc=gcc \
+     --prefix=${MINGW_PREFIX} \

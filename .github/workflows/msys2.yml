@@ -1,0 +1,19 @@
+name: windows-msys2
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: msys2/setup-msys2@v2
+        with:
+          path-type: inherit
+      - name: install
+        shell: msys2 {0}
+        run: bash ./test.sh
